@@ -1,5 +1,5 @@
 import { CheckCircle, Code, Download, Settings } from "lucide-react"
-import React, { useState } from "react"
+import { type ReactNode, useState } from "react"
 
 // Types
 interface FormErrors {
@@ -116,7 +116,7 @@ export const App = () => {
     }
   }
 
-  const renderOptions = (): React.ReactNode | null => {
+  const renderOptions = (): ReactNode | null => {
     if (!technology) return null
 
     const optionConfigs: OptionConfig = {
