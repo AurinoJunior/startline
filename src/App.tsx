@@ -4,6 +4,7 @@ import { ConditionalOptions } from "./components/ConditionalOptions"
 import { DefaultItems } from "./components/DefaultItems"
 import { Footer } from "./components/Footer"
 import { GenerateButton } from "./components/GenerateButton"
+import { Technologys } from "./components/Technologys"
 
 // Types
 interface FormErrors {
@@ -12,13 +13,6 @@ interface FormErrors {
 }
 
 export type Technology = "react" | "node" | "nextjs"
-
-interface TechnologyOption {
-  value: Technology
-  label: string
-  desc: string
-  icon: string
-}
 
 export interface ProjectOptions {
   tailwind: boolean
@@ -52,16 +46,6 @@ export const App = () => {
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
-  }
-
-  const handleTechnologyChange = (tech: Technology): void => {
-    setTechnology(tech)
-    // Reset options when technology changes
-    setOptions({
-      tailwind: false,
-      fastify: false,
-      shadcn: false,
-    })
   }
 
   const generateBoilerplate = async (): Promise<void> => {
@@ -102,22 +86,6 @@ export const App = () => {
       setIsGenerating(false)
     }
   }
-
-  const technologies: TechnologyOption[] = [
-    {
-      value: "react",
-      label: "React",
-      desc: "Biblioteca para interfaces",
-      icon: "⚛️",
-    },
-    { value: "node", label: "Node.js", desc: "Runtime JavaScript", icon: "🟢" },
-    {
-      value: "nextjs",
-      label: "Next.js",
-      desc: "Framework React fullstack",
-      icon: "▲",
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4">
@@ -168,40 +136,11 @@ export const App = () => {
               )}
             </div>
 
-            {/* Technology Selection */}
-            <div>
-              <h2 className="block text-sm font-medium text-gray-300 mb-4">
-                Tecnologia Principal *
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {technologies.map((tech: TechnologyOption) => (
-                  <label key={tech.value} className="cursor-pointer">
-                    <input
-                      type="radio"
-                      name="technology"
-                      value={tech.value}
-                      checked={technology === tech.value}
-                      onChange={() => handleTechnologyChange(tech.value)}
-                      className="sr-only"
-                    />
-                    <div
-                      className={`p-4 border-2 rounded-lg transition-all ${
-                        technology === tech.value
-                          ? "border-blue-500 bg-blue-900/50"
-                          : "border-gray-600 hover:border-gray-500 bg-gray-700/50"
-                      }`}
-                    >
-                      <div className="text-2xl mb-2">{tech.icon}</div>
-                      <div className="font-medium text-white">{tech.label}</div>
-                      <div className="text-sm text-gray-300">{tech.desc}</div>
-                    </div>
-                  </label>
-                ))}
-              </div>
-              {errors.technology && (
-                <p className="mt-2 text-sm text-red-600">{errors.technology}</p>
-              )}
-            </div>
+            <Technologys
+              technology={technology}
+              setTechnology={setTechnology}
+              setOptions={setOptions}
+            />
 
             <ConditionalOptions
               technology={technology}
