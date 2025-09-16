@@ -1,7 +1,7 @@
 import { Download } from "lucide-react"
 
 interface GenerateButtonProps {
-  isLoading: boolean
+  isLoading?: boolean
   handleOnClick: () => void
 }
 

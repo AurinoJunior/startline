@@ -1,5 +1,5 @@
 import { Settings } from "lucide-react"
-import type { ProjectOptions, Technology } from "../../App"
+import type { ProjectOptions, Technology } from "../../hooks/useForm"
 
 interface AdditionalOption {
   key: keyof ProjectOptions

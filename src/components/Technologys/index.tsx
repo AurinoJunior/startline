@@ -1,4 +1,4 @@
-import type { ProjectOptions, Technology } from "../../App"
+import type { ProjectOptions, Technology } from "../../hooks/useForm"
 
 interface TechnologyOption {
   value: Technology
