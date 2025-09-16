@@ -1,5 +1,8 @@
-import { CheckCircle, Code, Download, Settings } from "lucide-react"
+import { CheckCircle, Code, Settings } from "lucide-react"
 import { type ReactNode, useState } from "react"
+import { DefaultItems } from "./components/DefaultItems"
+import { Footer } from "./components/Footer"
+import { GenerateButton } from "./components/GenerateButton"
 
 // Types
 interface FormErrors {
@@ -13,7 +16,7 @@ interface ProjectOptions {
   shadcn: boolean
 }
 
-type Technology = "react" | "node" | "nextjs" | ""
+type Technology = "react" | "node" | "nextjs"
 
 interface TechnologyOption {
   value: Technology
@@ -34,7 +37,7 @@ interface OptionConfig {
 
 export const App = () => {
   const [projectName, setProjectName] = useState<string>("")
-  const [technology, setTechnology] = useState<Technology>("")
+  const [technology, setTechnology] = useState<Technology>("react")
   const [options, setOptions] = useState<ProjectOptions>({
     tailwind: false,
     fastify: false,
@@ -191,13 +194,6 @@ export const App = () => {
     },
   ]
 
-  const defaultIncludes: string[] = [
-    "TypeScript configurado",
-    "ESLint e Prettier",
-    "Estrutura de pastas organizada",
-    "Scripts de desenvolvimento e build",
-  ]
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4">
       <div className="max-w-2xl mx-auto">
@@ -285,45 +281,15 @@ export const App = () => {
             {/* Conditional Options */}
             {renderOptions()}
 
-            {/* Default Includes */}
-            <div className="bg-green-900/50 border border-green-700 rounded-lg p-4">
-              <h3 className="font-medium text-green-300 flex items-center gap-2 mb-2">
-                <CheckCircle className="w-5 h-5" />
-                Sempre Incluído
-              </h3>
-              <ul className="text-sm text-green-200">
-                {defaultIncludes.map((item: string, i: number) => (
-                  <li key={String(i)}>• {item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Generate Button */}
-            <button
-              type="button"
-              onClick={generateBoilerplate}
-              disabled={isGenerating}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            >
-              {isGenerating ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  Gerando...
-                </>
-              ) : (
-                <>
-                  <Download className="w-5 h-5" />
-                  Gerar e Baixar Boilerplate
-                </>
-              )}
-            </button>
+            <DefaultItems />
+            <GenerateButton
+              isLoading={isGenerating}
+              handleOnClick={generateBoilerplate}
+            />
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="text-center mt-8 text-gray-400 text-sm">
-          <p>Desenvolvido com ❤️ para acelerar seu desenvolvimento</p>
-        </div>
+        <Footer />
       </div>
     </div>
   )
