@@ -28,7 +28,7 @@ export const Technologys = ({
     {
       value: "node",
       label: "Node.js",
-      desc: "Runtime JavaScript para servidor",
+      desc: "Runtime JavaScript",
       icon: "🟢",
     },
     {
@@ -53,7 +53,7 @@ export const Technologys = ({
       <h2 className="block text-sm font-medium text-gray-300 mb-4">
         Tecnologia Principal *
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 h-[120px]">
         {technologies.map((tech: TechnologyOption) => (
           <label key={tech.value} className="cursor-pointer">
             <input

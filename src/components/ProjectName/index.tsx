@@ -32,7 +32,7 @@ export const ProjectName = ({
         }`}
       />
       {errors.projectName && (
-        <p className="mt-1 text-sm text-red-600">{errors.projectName}</p>
+        <p className="mt-1 text-sm text-red-500">{errors.projectName}</p>
       )}
     </div>
   )
