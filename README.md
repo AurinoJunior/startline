@@ -1,5 +1,5 @@
 <div align="center">
-   <h3>Nome do Projeto</h3>
+   <h3>Startline</h3>
 </div>
 
 <p align="center">
@@ -14,26 +14,10 @@
 📍 **Conteúdo**
 
 - [Contexto](#blue_book-contexto)
-- [Tecnologias](#computer-tecnologias)
-- [Iniciando o projeto](#video_game-iniciando-o-projeto)
-- [Como usar](#beers-como-usar)
 - [Licença](#page_with_curl-licença)
 
 ## :blue_book: Contexto
-
-
-
-## :computer: Tecnologias
-
-
-
-## :video_game: Iniciando o projeto
-
-
-
-## :beers: Como usar
-
-
+O **Startline** é uma aplicação web que facilita a geração de projetos boilerplate para diferentes stacks modernas, como Next.js, React com Tailwind, Node.js (Fastify/Express), entre outros. O objetivo é acelerar o início de novos projetos, fornecendo uma estrutura inicial pronta para uso, com as melhores práticas e configurações já aplicadas.
 
 ## :page_with_curl: Licença
 
