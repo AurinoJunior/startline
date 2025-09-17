@@ -1,6 +1,7 @@
 <div align="center">
-   <h3>Startline</h3>
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32946164/490773314-62892f42-1269-4a73-9970-80c9b62b9692.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250917%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250917T210521Z&X-Amz-Expires=300&X-Amz-Signature=540164b994229dca57061d352a8b7744e67c7132828588c0d951e03b3b0c53da&X-Amz-SignedHeaders=host" width="375px" height="135px">
 </div>
+   
 
 <p align="center">
    <a href="https://www.instagram.com/aurigod97/">
